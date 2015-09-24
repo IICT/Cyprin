@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Cyprin</string>
+   <string>Nemo</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -181,7 +181,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPlainTextEdit" name="payLoad">
+       <widget class="QPlainTextEdit" name="payload">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainui/mainwindow.ui'
 #
-# Created: Wed Sep 23 22:52:13 2015
+# Created: Thu Sep 24 15:01:53 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -99,16 +99,16 @@ class Ui_MainWindow(object):
         self.tableView.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
         self.tableView.setObjectName("tableView")
         self.verticalLayout.addWidget(self.tableView)
-        self.payLoad = QtGui.QPlainTextEdit(self.centralWidget)
+        self.payload = QtGui.QPlainTextEdit(self.centralWidget)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.payLoad.sizePolicy().hasHeightForWidth())
-        self.payLoad.setSizePolicy(sizePolicy)
-        self.payLoad.setMaximumSize(QtCore.QSize(16777215, 400))
-        self.payLoad.setReadOnly(True)
-        self.payLoad.setObjectName("payLoad")
-        self.verticalLayout.addWidget(self.payLoad)
+        sizePolicy.setHeightForWidth(self.payload.sizePolicy().hasHeightForWidth())
+        self.payload.setSizePolicy(sizePolicy)
+        self.payload.setMaximumSize(QtCore.QSize(16777215, 400))
+        self.payload.setReadOnly(True)
+        self.payload.setObjectName("payload")
+        self.verticalLayout.addWidget(self.payload)
         self.verticalLayout_2.addLayout(self.verticalLayout)
         MainWindow.setCentralWidget(self.centralWidget)
         self.menuBar = QtGui.QMenuBar(MainWindow)
@@ -123,7 +123,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Cyprin", None, QtGui.QApplication.UnicodeUTF8))
+        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Nemo", None, QtGui.QApplication.UnicodeUTF8))
         self.label_4.setText(QtGui.QApplication.translate("MainWindow", "Paquets", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("MainWindow", "Adresse IP", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Protocole", None, QtGui.QApplication.UnicodeUTF8))

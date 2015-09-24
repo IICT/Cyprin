@@ -58,3 +58,5 @@ target/
 
 # Qt stuff
 Qt/build-*/
+
+.vs/

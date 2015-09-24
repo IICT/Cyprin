@@ -30,17 +30,17 @@ class MainWindow(QtGui.QMainWindow):
         if selectedRows != []:
             row = selectedRows[0]
             payload = row.sibling(row.row(),7).data()
-            self.__view.payLoad.clear()
-            self.__view.payLoad.insertPlainText(payload)
+            self.__view.payload.clear()
+            self.__view.payload.insertPlainText(payload)
 
     def startCapture(self):
         self.__view.startButton.setEnables = False
         buttonText = self.__view.startButton.text()
         self.__view.startButton.setText("Capture en cours...")
         self.__view.tableView.setModel(PacketList(self, []))
-        self.__view.payLoad.clear()
+        self.__view.payload.clear()
         QtCore.QCoreApplication.processEvents()
- 
+
         numPackets = self.__view.numPackets.value()
         ipAddress = self.__view.ipAddress.text()
         protocol = self.__view.protocol.text()
@@ -66,10 +66,10 @@ class PacketList(QtCore.QAbstractTableModel):
     def __init__(self, parent, myList, *args):
         QtCore.QAbstractTableModel.__init__(self, parent, *args)
         self.myList = myList
-    
+
     def rowCount(self, parent):
         return len(self.myList)
-    
+
     def columnCount(self, parent):
         return len(self.header)
 

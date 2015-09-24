@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Cyprin", "Cyprin.pyproj", "{466EE3FC-A1B0-4E85-8A1B-8B6ABBE4886A}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Nemo", "Nemo.pyproj", "{466EE3FC-A1B0-4E85-8A1B-8B6ABBE4886A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
