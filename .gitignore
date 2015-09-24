@@ -55,3 +55,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Qt stuff
+Qt/build-*/
