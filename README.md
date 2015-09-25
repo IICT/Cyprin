@@ -12,7 +12,7 @@ Installation
   * Installer scapy, pyside et Qt4
 
 Windows:
-  * Télécharger est installer WinPcap: http://www.winpcap.org/
+  * TÃ©lÃ©charger est installer WinPcap: http://www.winpcap.org/
   * Installer dnet, pcap et scapy:
     * Pour Windows 64 bit: https://github.com/Kondziowy/scapy_win64/tree/master/win64
 	* Pour Windows 32 bit: https://github.com/Kondziowy/scapy_win64/tree/master/win32
@@ -20,6 +20,3 @@ Windows:
 Troubleshooting:
   * Si l'installer de pcapy ne trouve pas l'installation de python, il faut l'ajouter dans le registre:
 	  http://effbot.org/zone/python-register.htm
-
-
-

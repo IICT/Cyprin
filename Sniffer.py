@@ -20,33 +20,13 @@ def __stripNonPrintable(str):
     printable = Set('Lu', 'Ll')
     return ''.join(c if unicodata.category(c) in printable else '.' for c in str)
 
-def __checkIP(address):
-    try:
-        socket.inet_aton(address)
-        return True
-    except socket.error:
-        return False
-
-def __checkTransportProtocol(protocol):
-    if protocol.strip().upper() in ["TCP", "UDP"]:
-        return True
-    else:
-        return 
-
-def __checkPort(port):
-    try:
-        p = int(port)
-        return True if 0 < p < 65536 else False
-    except ValueError:
-        return False
-
 def __extractPacketInfo(packet):
     simplePacket = SimplePacket()
     simplePacket.srcMAC = packet[Ether].src
     simplePacket.dstMAC = packet[Ether].dst
     simplePacket.srcIP = packet[IP].src
     simplePacket.dstIP = packet[IP].dst
-    if TCP in packet: 
+    if TCP in packet:
         simplePacket.transport = "TCP"
         simplePacket.srcPort = packet[TCP].sport
         simplePacket.dstPort = packet[TCP].dport
@@ -65,14 +45,34 @@ def __extractPacketInfo(packet):
 # Main functions
 # ========================================================================================================
 
+def CheckIP(address):
+    try:
+        socket.inet_aton(address)
+        return True
+    except socket.error:
+        return False
+
+def CheckTransportProtocol(protocol):
+    if protocol.strip().upper() in ["TCP", "UDP"]:
+        return True
+    else:
+        return
+
+def CheckPort(port):
+    try:
+        p = int(port)
+        return True if 0 < p < 65536 else False
+    except ValueError:
+        return False
+
 def MakeFilter(ipAddress=None, transportProtocol=None, port=None):
     filters = []
-    if ipAddress and not __checkIP(ipAddress): 
+    if ipAddress and not CheckIP(ipAddress):
         raise ValueError("L'adresse IP doit avoir le format 'xxx.xxx.xxx.xxx'. Non valable: %s" % ipAddress)
-    if transportProtocol and not __checkTransportProtocol(transportProtocol): 
-        raise ValueError("Le protocole de transport doit être 'TCP' ou 'UDP'. Non valable: %s" % transportProtocol)
-    if port and not __checkPort(port): 
-        raise ValueError("Le port doit être entre 1 et 65535. Non valable: %s" % port)
+    if transportProtocol and not CheckTransportProtocol(transportProtocol):
+        raise ValueError("Le protocole de transport doit ï¿½tre 'TCP' ou 'UDP'. Non valable: %s" % transportProtocol)
+    if port and not CheckPort(port):
+        raise ValueError("Le port doit ï¿½tre entre 1 et 65535. Non valable: %s" % port)
 
     filters.append("ip") # Only capture IPv4 packets
     if ipAddress: filters.append("host %s" % ipAddress)
@@ -90,4 +90,3 @@ def Capture(count=10, filter=None, iface=None, timeout=60):
     if count > 25: count = 25
     packets = sniff(count=count, filter=filter, iface=iface, timeout=timeout)
     return [ __extractPacketInfo(packet) for packet in packets ]
-
